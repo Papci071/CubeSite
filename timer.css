@@ -189,7 +189,7 @@ th{
 }
 @font-face {
     font-family: 'digital-clock-font';
-    src: url('digital-7.ttf');
+    src: url('https://papci071.github.io/CubeSite/digital-7.ttf');
 }
 
 #timer {
