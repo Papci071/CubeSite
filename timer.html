@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="PL-pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>CubeTimer</title>
+        <script type="text/javascript" src="https://unpkg.com/stackmat"></script>
+
+
+        <script type="text/javascript" src="usuwanie.js"></script>
+        <script type="text/javascript" src="zapisDoLocalStorage.js"></script>
+        <script type="text/javascript" src="tabCzas.js"></script>        
+        <link rel="stylesheet" href="timer.css">
+    </head>
+    <body>
+        <div id="navigacja">
+            <div id="navTIMER">TIMER</div>
+            <div id="navSTATYSTYKI">STATYSTYKI</div>
+            <div id="navHISTORIA">HISTORIA</div>
+            <div id="navNAUKA">NAUKA</div>
+        </div>
+        <div id="left">
+            <div id="avg">
+                <div id="avgOGOL">
+                    AVG ALL
+                    <div>00.000</div>
+                </div>
+                <div id="avg5">
+                    AVG5
+                    <div>00.000</div>
+                </div>
+                <div id="avg10">
+                    AVG10
+                    <div>00.000</div>
+                </div>
+            </div>
+            <div id="dt">
+                <div id="de"><hr></div>
+                <div id="dr"></div>
+            </div>
+            <div id="czasy">
+                <table id="tabCzas">
+                    <tr>
+                        <th>Lp</th>
+                        <th>Czas</th>
+                        <th>Scrambel</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="mid">
+            <div id="gora">
+                <div id="previousScrambel">⇚</div>
+                <div id="nextScrambel">⇛</div> 
+            </div>
+            <div id="scramble-output">SCRAMBEL</div>          
+
+            <div id="timer">00.000</div>
+
+            <div id="usunCzas" onclick="usunCzas()">🗑️</div>
+        </div>
+
+        
+        <button hidden id="startButton">Start</button>
+        <button hidden id="stopButton" disabled>Stop</button>
+        <button hidden id="resetButton">Reset</button>
+    
+
+
+        <div id="right"></div>
+
+
+
+
+
+
+
+        <script src="timer2.js"></script>
+        <script type="module" src="scrambel.js"></script>
+        <script type="text/javascript" src="timer.js"></script>
+    </body>
+</html>

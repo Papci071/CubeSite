@@ -1,0 +1,230 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    background-color: rgb(182, 177, 177);
+    font-size: large;
+}
+
+*{
+    padding: 0;
+    margin: 0;   
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#navigacja{
+    background-color: grey;
+    display: flex;
+    width: 100%;
+    margin: 0;
+    height: 8%;
+    clear: both;
+    user-select: none;
+}
+#navigacja>div{
+    width: 25%;
+    text-align: center;
+    align-content: center;
+}
+#navTIMER:hover{
+    background-color: rgb(148, 146, 146);
+    width: 25%;
+    cursor: pointer;
+}
+#navSTATYSTYKI:hover{
+    background-color: rgb(148, 146, 146);
+    width: 25%;
+    cursor: pointer;
+}
+#navHISTORIA:hover{
+    background-color: rgb(148, 146, 146);
+    width: 25%;
+    cursor: pointer;
+}
+#navNAUKA:hover{
+    background-color: rgb(148, 146, 146);
+    width: 25%;
+    cursor: pointer;
+}
+#left{
+    width: 14%;
+    height: 92%;
+    float: left;
+}
+#avg>div{
+    margin-bottom: 1em;
+    text-align: center;
+    width: 14em;
+}
+#avg{
+background-color: rgb(156, 156, 156);
+display:grid;
+border-radius: 0 0 1.5em 0;
+height: 20%;
+}
+#dt{
+    display: flex;
+}
+#de{
+background-color: rgb(156, 156, 156);
+height: 0.5em;
+width: 12.5em;
+
+}
+#dr{
+    background-color: rgb(182, 177, 177);
+    width: 1.5em;
+    height: 0.5em;
+    border-radius: 1em;
+    margin-left: -0.1em;
+}
+#czasy{
+background-color: rgb(156, 156, 156);
+height: calc(80% - 2em);
+border-radius: 0 1.5em 0 0;
+}
+hr{
+margin-top: 0.2em;
+border: rgb(126, 123, 123) 1px dotted;
+}
+
+#czasy{
+    padding-top: 1.5em;
+    padding-left: 1em;
+    text-align: center;
+}
+#czasy>table{
+    border-collapse: collapse;
+}
+td {
+    border: 1px black solid;
+    height: 2em;
+    padding: 0 0.5em;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 4.5em;
+    position: relative;
+}
+
+tr>td:last-child:hover {
+    background-color: rgb(156, 156, 156);
+    max-width: none; /* Wyłącz ograniczenie szerokości */
+    overflow: visible; /* Pozwól na pokazanie zawartości */
+    position: absolute; /* Wyłącz komórkę z przepływu tabeli */
+    z-index: 1; /* Zapewnij, że komórka będzie nad innymi elementami */
+    white-space: normal; /* Pozwól na złamanie linii, jeśli potrzeba */
+    text-align: center;
+    align-content: center;
+    transform: translate(-1px, -1px);
+}
+
+
+
+
+
+
+tr>td:first-child
+{
+    background-color: green;
+    
+}
+
+tr > td:first-child:hover {
+    background-color: red;
+    cursor: pointer;
+}
+tr>td:first-child:active {
+    background-color: rgb(119, 1, 1);
+}
+
+
+
+
+th{
+    border: 1px solid black;
+    font-weight: normal;
+    height: 2em;
+    padding: 0 0.5em;
+}
+#mid{
+    float: left;
+    font-size: 2.5em;
+    background-color: rgb(182, 177, 177);
+    text-align: center;
+    width:70%;
+}
+#previousScrambel, #nextScrambel{
+    cursor: pointer;
+    background-color: grey;
+    margin: 0 auto;
+    user-select: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+#previousScrambel{
+    border-radius: 0 0 0 20px;
+}
+#nextScrambel{
+    border-radius: 0 0 20px 0;
+}
+
+#previousScrambel:hover, #nextScrambel:hover{
+    background-color: rgb(148, 146, 146);
+}
+
+#previousScrambel{
+    margin-right: 0;
+}
+#nextScrambel{
+    margin-left: 0;
+}
+
+#scramble-output{
+    align-content: center;
+
+}
+#mid>#gora{
+    display: flex;
+}
+@font-face {
+    font-family: 'digital-clock-font';
+    src: url('digital-7.ttf');
+}
+
+#timer {
+    background-color: rgb(137, 137, 148);
+    font-family: 'digital-clock-font';
+    font-size: 4em;
+    text-align: left;
+    margin-left: 31%;
+    width: auto;
+    min-width: 455px;
+    max-width: max-content;
+    border: 8px solid rgb(56, 53, 53);
+    padding: 0 25px;
+    border-radius: 20px;
+}
+#usunCzas{
+    background-color: red;
+    width: max-content;
+    margin: 3px auto;
+    border-radius: 50%;
+    border: 5px solid rgb(148, 11, 11);
+    padding: 0.2em;
+    user-select: none;
+}
+#usunCzas:hover{
+    border:  4px solid rgb(148, 11, 11);
+}
+#usunCzas:active{
+    background-color: rgb(236, 37, 37);
+    border: 5px solid red;
+    font-size: 90%;
+}
+#right{
+    width: 16%;
+    height: 92%;
+    background-color: orange;
+    float: right;
+}
