@@ -1,0 +1,63 @@
+#kostka {
+    width: 157.5px;
+    height: 157.5px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg) rotateY(-45deg);
+    padding-left: 16px;
+}
+#wizualizacja{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.scana {
+    position: absolute;
+    width: 105px;
+    height: 105px;
+    display: flex;
+    flex-wrap: wrap;
+    transform-origin: center;
+}
+
+.W {
+    transform: rotateX(90deg) translateZ(157.5px);
+    margin-top: 105px;
+}
+
+.O {
+    display: none;
+}
+
+.G {
+    transform: translateZ(157.5px);
+    margin-left:105px;
+    margin-top: -86px;
+}
+
+.R {
+    transform: rotateY(90deg) translateZ(157.5px);
+    margin-left: -105px;
+}
+
+.B {
+    display: none;
+}
+
+.Y {
+    display: none;
+}
+
+.kloc {
+    width: 33px;
+    height: 33px;
+    border: 1px solid black;
+}
+
+.bialy { background-color: white; }
+.pomaranczowy { background-color: orange; }
+.zielony { background-color: green; }
+.czerwony { background-color: red; }
+.niebieski { background-color: blue; }
+.zolty { background-color: yellow; }

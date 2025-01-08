@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="PL-pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>CubeTimer</title>
+        <script type="text/javascript" src="https://unpkg.com/stackmat"></script>
+        <script type="text/javascript" src="avg.js"></script>
+        <script type="text/javascript" src="usuwanie.js"></script>
+        <script type="text/javascript" src="zapisDoLocalStorage.js"></script>
+        <script type="text/javascript" src="tabCzas.js"></script>  
+        <script type="text/javascript" src="topka.js"></script>      
+        <link rel="stylesheet" href="timer.css">
+        <link id="mainStyle" rel="stylesheet" href="kostka.css">
+        <script src="kostka.js"></script>
+        <script src="podmianacss.js"></script>
+    </head>
+    <body>
+        <div id="navigacja">
+            <div id="navTIMER">TIMER</div>
+            <div id="navSTATYSTYKI">STATYSTYKI</div>
+            <div id="navHISTORIA">HISTORIA</div>
+            <div id="navNAUKA">NAUKA</div>
+        </div>
+
+<div id="lmr">
+            <div id="left">
+                <div id="avg">
+                    <div id="avgOGOL">
+                        AVG ALL
+                        <div id="avgOGOLczas">00.000</div>
+                    </div>
+                    <div id="avg5">
+                        AVG5
+                        <div id="avg5czas">00.000</div>
+                    </div>
+                    <div id="avg10">
+                        AVG10
+                        <div id="avg10czas">00.000</div>
+                    </div>
+                </div>
+                <div id="dt">
+                    <div id="de"><hr></div>
+                    <div id="dr"></div>
+                </div>
+                <div id="czasy">
+                    <table id="tabCzas">
+                        <tr>
+                            <th>Lp</th>
+                            <th>Czas</th>
+                            <th>Scrambel</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+    
+            <div id="mid">
+                <div id="gora">
+                    <div id="previousScrambel">⇚</div>
+                    <div id="nextScrambel">⇛</div> 
+                </div>
+                <div id="scramble-output">SCRAMBEL</div>          
+    
+                <div id="timer">00.000</div>
+    
+                <div id="usunCzas" onclick="usunCzas()">🗑️</div>
+            </div>
+    
+            <button hidden id="startButton">Start</button>
+            <button hidden id="stopButton" disabled>Stop</button>
+            <button hidden id="resetButton">Reset</button>
+    
+            <div id="right">
+                <div id="topka">
+                    <div id="top2" data-text="00.000"></div>
+                    <div id="top1" data-text="00.000"></div>
+                    <div id="top3" data-text="00.000"></div>
+                </div>
+                <div id="wizualizacja" onclick="zamianka()">
+                    <div id="kostka">
+                        <div class="pizda"></div>
+                        <div class="scana W">
+                            <div class="kloc bialy" id="W1">W1</div>
+                            <div class="kloc bialy" id="W2">W2</div>
+                            <div class="kloc bialy" id="W3">W3</div>
+                            <div class="kloc bialy" id="W4">W4</div>
+                            <div class="kloc bialy" id="W5">W5</div>
+                            <div class="kloc bialy" id="W6">W6</div>
+                            <div class="kloc bialy" id="W7">W7</div>
+                            <div class="kloc bialy" id="W8">W8</div>
+                            <div class="kloc bialy" id="W9">W9</div>
+                        </div>
+                        <div class="pizda"></div>
+                        <div class="pizda"></div>
+                        <div class="scana O">
+                            <div class="kloc pomaranczowy" id="O1">O1</div>
+                            <div class="kloc pomaranczowy" id="O2">O2</div>
+                            <div class="kloc pomaranczowy" id="O3">O3</div>
+                            <div class="kloc pomaranczowy" id="O4">O4</div>
+                            <div class="kloc pomaranczowy" id="O5">O5</div>
+                            <div class="kloc pomaranczowy" id="O6">O6</div>
+                            <div class="kloc pomaranczowy" id="O7">O7</div>
+                            <div class="kloc pomaranczowy" id="O8">O8</div>
+                            <div class="kloc pomaranczowy" id="O9">O9</div>
+                        </div>
+                        <div class="scana G">
+                            <div class="kloc zielony" id="G1">G1</div>
+                            <div class="kloc zielony" id="G2">G2</div>
+                            <div class="kloc zielony" id="G3">G3</div>
+                            <div class="kloc zielony" id="G4">G4</div>
+                            <div class="kloc zielony" id="G5">G5</div>
+                            <div class="kloc zielony" id="G6">G6</div>
+                            <div class="kloc zielony" id="G7">G7</div>
+                            <div class="kloc zielony" id="G8">G8</div>
+                            <div class="kloc zielony" id="G9">G9</div>
+                        </div>
+                        <div class="scana R">
+                            <div class="kloc czerwony" id="R1">R1</div>
+                            <div class="kloc czerwony" id="R2">R2</div>
+                            <div class="kloc czerwony" id="R3">R3</div>
+                            <div class="kloc czerwony" id="R4">R4</div>
+                            <div class="kloc czerwony" id="R5">R5</div>
+                            <div class="kloc czerwony" id="R6">R6</div>
+                            <div class="kloc czerwony" id="R7">R7</div>
+                            <div class="kloc czerwony" id="R8">R8</div>
+                            <div class="kloc czerwony" id="R9">R9</div>
+                        </div>
+                        <div class="scana B">
+                            <div class="kloc niebieski" id="B1">B1</div>
+                            <div class="kloc niebieski" id="B2">B2</div>
+                            <div class="kloc niebieski" id="B3">B3</div>
+                            <div class="kloc niebieski" id="B4">B4</div>
+                            <div class="kloc niebieski" id="B5">B5</div>
+                            <div class="kloc niebieski" id="B6">B6</div>
+                            <div class="kloc niebieski" id="B7">B7</div>
+                            <div class="kloc niebieski" id="B8">B8</div>
+                            <div class="kloc niebieski" id="B9">B9</div>
+                        </div>
+                        <div class="pizda"></div>
+                        <div class="scana Y">
+                            <div class="kloc zolty" id="Y1">Y1</div>
+                            <div class="kloc zolty" id="Y2">Y2</div>
+                            <div class="kloc zolty" id="Y3">Y3</div>
+                            <div class="kloc zolty" id="Y4">Y4</div>
+                            <div class="kloc zolty" id="Y5">Y5</div>
+                            <div class="kloc zolty" id="Y6">Y6</div>
+                            <div class="kloc zolty" id="Y7">Y7</div>
+                            <div class="kloc zolty" id="Y8">Y8</div>
+                            <div class="kloc zolty" id="Y9">Y9</div>
+                        </div>
+                        <div class="pizda"></div>
+                        <div class="pizda"></div>
+                    </div>
+                </div>
+            </div>
+    
+</div>
+
+
+
+
+
+
+        <script src="timer2.js"></script>
+        <script type="module" src="scrambel.js"></script>
+        <script type="text/javascript" src="timer.js"></script>
+    </body>
+</html>
